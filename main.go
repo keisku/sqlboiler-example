@@ -17,7 +17,7 @@ var (
 	host     = os.Getenv("PSQL_HOST")
 	user     = os.Getenv("PSQL_USER")
 	password = os.Getenv("PSQL_PASSWORD")
-	dbname   = os.Getenv("PSQL_DATABASE")
+	dbname   = os.Getenv("PSQL_DBNAME")
 	sslmode  = os.Getenv("PSQL_SSLMODE")
 	dns      = fmt.Sprintf("host=%s user=%s password=%s dbname=%s sslmode=%s", host, user, password, dbname, sslmode)
 )

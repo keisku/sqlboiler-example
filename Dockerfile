@@ -21,6 +21,6 @@ CMD while ! nc -z ${PSQL_HOST} ${PSQL_PORT}; do sleep 1; done && \
     port=${PSQL_PORT} \
     user=${PSQL_USER} \
     password=${PSQL_PASSWORD} \
-    dbname=${PSQL_DATABASE} \
+    dbname=${PSQL_DBNAME} \
     sslmode=${PSQL_SSLMODE}" up && \
     realize start

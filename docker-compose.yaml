@@ -11,7 +11,7 @@ services:
       PSQL_PORT: "5432"
       PSQL_USER: "exampleu"
       PSQL_PASSWORD: "examplepw"
-      PSQL_DATABASE: "exampledb"
+      PSQL_DBNAME: "exampledb"
       PSQL_SSLMODE: "disable"
     depends_on:
       - sqlboiler_example_postgres
