@@ -1,0 +1,10 @@
+pkgname="models"
+add-global-variants=true
+add-panic-variants=true
+[psql]
+  dbname="exampledb"
+  host="localhost"
+  port=5432
+  user="exampleu"
+  pass="examplepw"
+  sslmode="disable"

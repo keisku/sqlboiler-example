@@ -1,0 +1,31 @@
+version: "3.7"
+services:
+  sqlboiler_example_app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      PSQL_HOST: "sqlboiler_example_postgres"
+      PSQL_PORT: "5432"
+      PSQL_USER: "exampleu"
+      PSQL_PASSWORD: "examplepw"
+      PSQL_DATABASE: "exampledb"
+      PSQL_SSLMODE: "disable"
+    depends_on:
+      - sqlboiler_example_postgres
+    volumes:
+      - .:/go/src/github.com/kskumgk63/sqlboiler-example
+  sqlboiler_example_postgres:
+    image: postgres:10.4
+    ports:
+      - 5432:5432
+    restart: always
+    volumes:
+      - .data/postgres:/var/lib/postgresql/data/pgdata
+    environment:
+      PGDATA: /var/lib/postgresql/data/pgdata
+      POSTGRES_USER: exampleu
+      POSTGRES_PASSWORD: examplepw
+      POSTGRES_DB: exampleb
